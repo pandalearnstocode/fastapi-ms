@@ -127,3 +127,16 @@ def _hist_payload_generate(step=50):
         "value_type": "abs",
         "chart_type": "hist",
     }
+
+
+def _scatter_payload_generator():
+    x = np.linspace(0, 10)
+    y = np.random.uniform(0, 100, x.size)
+    df = pd.DataFrame({"x": x, "y": y}).round(2).to_dict("records")
+    colors_df = pd.DataFrame({"x": col_gen(), "y": col_gen()}).to_dict("records")
+    return {
+        "data": df.to_dict("records"),
+        "fill": colors_df.to_dict("records"),
+        "value_type": "abs",
+        "chart_type": "scatter",
+    }

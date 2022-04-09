@@ -5,6 +5,7 @@ from payload_generator import (
     _donut_payload_generator,
     _hist_payload_generate,
     _line_payload_generator,
+    _scatter_payload_generator,
 )
 
 app = FastAPI()
@@ -28,3 +29,8 @@ async def line():
 @app.get("/histogram")
 async def hist():
     return _hist_payload_generate()
+
+
+@app.get("/scatter")
+async def scatter():
+    return _scatter_payload_generator()
