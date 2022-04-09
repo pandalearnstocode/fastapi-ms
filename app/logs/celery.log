@@ -571,3 +571,13 @@ AssertionError: daemonic processes are not allowed to have children
 [2022-04-09 09:06:23,251: INFO/MainProcess] mingle: all alone
 [2022-04-09 09:06:23,264: INFO/MainProcess] celery@d3063bfff151 ready.
 [2022-04-09 09:06:27,605: INFO/MainProcess] Events of group {task} enabled by remote.
+[2022-04-09 10:19:28,660: INFO/MainProcess] Connected to redis://redis:6379/0
+[2022-04-09 10:19:28,669: INFO/MainProcess] mingle: searching for neighbors
+[2022-04-09 10:19:29,686: INFO/MainProcess] mingle: all alone
+[2022-04-09 10:19:29,693: INFO/MainProcess] celery@9f1d429ab600 ready.
+[2022-04-09 10:19:34,024: INFO/MainProcess] Events of group {task} enabled by remote.
+[2022-04-09 10:20:08,567: INFO/MainProcess] Connected to redis://redis:6379/0
+[2022-04-09 10:20:08,574: INFO/MainProcess] mingle: searching for neighbors
+[2022-04-09 10:20:09,592: INFO/MainProcess] mingle: all alone
+[2022-04-09 10:20:09,625: INFO/MainProcess] celery@bcf49ef2b9c6 ready.
+[2022-04-09 10:20:13,953: INFO/MainProcess] Events of group {task} enabled by remote.

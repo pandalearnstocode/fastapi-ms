@@ -98,3 +98,27 @@ def _line_payload_generator():
         "value_type": "abs",
         "chart_type": "line",
     }
+
+
+def _hist_payload_generate(step=50):
+    s = pd.Series(np.random.uniform(0, 1000, size=1000))
+    bin_range = np.arange(-200, 1000 + step, step)
+    out, bins = pd.cut(
+        s, bins=bin_range, include_lowest=True, right=False, retbins=True
+    )
+    df = (
+        out.value_counts()
+        .to_frame()
+        .reset_index()
+        .rename(columns={"index": "name", 0: "freq"})
+    )
+    x_col = []
+    for x in df["name"]:
+        x_col.append(x.mid)
+    df["name"] = df["name"].astype(str)
+    df["name"] = df["name"].str.replace("\[", "", regex=True)
+    df["name"] = df["name"].str.replace("\)", "", regex=True)
+    df["name"] = df["name"].str.replace("\,", " -", regex=True)
+    df["value"] = x_col
+    df = df.rename(columns={"name": "label"})
+    return df.to_dict("records")

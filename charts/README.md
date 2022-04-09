@@ -2,6 +2,7 @@
 
 - Donut chart
 - Bar chart
+- Line chart
 
 ## **Donut chart:**
 

@@ -3,6 +3,7 @@ from fastapi import FastAPI
 from payload_generator import (
     _bar_payload_generator,
     _donut_payload_generator,
+    _hist_payload_generate,
     _line_payload_generator,
 )
 
@@ -22,3 +23,8 @@ async def bar():
 @app.get("/line")
 async def line():
     return _line_payload_generator()
+
+
+@app.get("/histogram")
+async def hist():
+    return _hist_payload_generate()
