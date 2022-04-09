@@ -121,4 +121,9 @@ def _hist_payload_generate(step=50):
     df["name"] = df["name"].str.replace("\,", " -", regex=True)
     df["value"] = x_col
     df = df.rename(columns={"name": "label"})
-    return df.to_dict("records")
+    return {
+        "data": df.to_dict("records"),
+        "fill": None,
+        "value_type": "abs",
+        "chart_type": "hist",
+    }
