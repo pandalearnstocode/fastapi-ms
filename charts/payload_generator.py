@@ -133,10 +133,10 @@ def _scatter_payload_generator():
     x = np.linspace(0, 10)
     y = np.random.uniform(0, 100, x.size)
     df = pd.DataFrame({"x": x, "y": y}).round(2).to_dict("records")
-    colors_df = pd.DataFrame({"x": col_gen(), "y": col_gen()}).to_dict("records")
+    colors_df = pd.DataFrame({"x": [col_gen()], "y": [col_gen()]}).to_dict("records")
     return {
-        "data": df.to_dict("records"),
-        "fill": colors_df.to_dict("records"),
+        "data": df,
+        "fill": colors_df,
         "value_type": "abs",
         "chart_type": "scatter",
     }
@@ -210,3 +210,19 @@ def _stackedarea_payload_generator(type="abs"):
         "value_type": type,
         "chart_type": "stackedarea",
     }
+
+
+def _correlogram_payload_generator():
+    df = pd.read_csv(
+        "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/data_correlogram.csv"
+    )
+    df = df.set_index("Unnamed: 0")
+    df.index.name = None
+    df_dict = df.to_dict("split")
+    data_collector = []
+    for x in df_dict["index"]:
+        for y in df_dict["columns"]:
+            data_collector.append(
+                {"x": x, "y": y, "value": float(df.loc[x, y].round(4))}
+            )
+    return data_collector

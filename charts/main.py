@@ -3,6 +3,7 @@ from fastapi import FastAPI
 from payload_generator import (
     _bar_payload_generator,
     _bubblechart_payload_generator,
+    _correlogram_payload_generator,
     _donut_payload_generator,
     _hist_payload_generate,
     _line_payload_generator,
@@ -52,3 +53,8 @@ async def bubblechart():
 @app.get("/stackedarea")
 async def stackedarea():
     return _stackedarea_payload_generator()
+
+
+@app.get("/correlogram")
+async def correlogram():
+    return _correlogram_payload_generator()
