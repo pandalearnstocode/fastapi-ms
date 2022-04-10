@@ -183,3 +183,30 @@ def _bubblechart_payload_generator():
     bubble_chart_data_path = "https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/4_ThreeNum.csv"
     df = pd.read_csv(bubble_chart_data_path)
     return df.to_dict("records")
+
+
+def _stackedarea_payload_generator(type="abs"):
+    # type = "abs"
+    label_len = random.randint(1, 10)
+    x_max = random.randint(1, 100)
+    y_max = random.randint(1, 100)
+    z_max = random.randint(1, 100)
+    df = pd.DataFrame(
+        {
+            "label": [names.get_full_name() for _ in range(label_len)],
+            "X": np.random.uniform(0, x_max, label_len),
+            "Y": np.random.uniform(0, y_max, label_len),
+            "Z": np.random.uniform(0, z_max, label_len),
+        }
+    )
+    colors = [col_gen() for _ in range(df.shape[1] - 1)]
+    df_cols = df.columns.tolist()
+    df_cols.remove("label")
+    df = df.round(2)
+    colors_df = pd.DataFrame({"label": df_cols, "fill": colors})
+    return {
+        "data": df[["X", "Y", "Z"]].to_dict("records"),
+        "fill": colors_df.to_dict("records"),
+        "value_type": type,
+        "chart_type": "stackedarea",
+    }

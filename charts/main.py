@@ -7,6 +7,7 @@ from payload_generator import (
     _hist_payload_generate,
     _line_payload_generator,
     _scatter_payload_generator,
+    _stackedarea_payload_generator,
     _waterfall_payload_generator,
 )
 
@@ -46,3 +47,8 @@ async def waterfill():
 @app.get("/bubblechart")
 async def bubblechart():
     return _bubblechart_payload_generator()
+
+
+@app.get("/stackedarea")
+async def stackedarea():
+    return _stackedarea_payload_generator()
