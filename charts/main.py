@@ -6,6 +6,7 @@ from payload_generator import (
     _hist_payload_generate,
     _line_payload_generator,
     _scatter_payload_generator,
+    _waterfall_payload_generator,
 )
 
 app = FastAPI()
@@ -34,3 +35,8 @@ async def hist():
 @app.get("/scatter")
 async def scatter():
     return _scatter_payload_generator()
+
+
+@app.get("/waterfall")
+async def waterfill():
+    return _waterfall_payload_generator()

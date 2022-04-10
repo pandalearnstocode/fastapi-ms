@@ -140,3 +140,40 @@ def _scatter_payload_generator():
         "value_type": "abs",
         "chart_type": "scatter",
     }
+
+
+def random_dates(
+    start=pd.to_datetime("2015-01-01"),
+    end=pd.to_datetime("2018-01-01"),
+    unit="D",
+    seed=None,
+):
+    n = random.randint(4, 12)
+    if not seed:  # from piR's answer
+        np.random.seed(0)
+    ndays = (end - start).days + 1
+    return pd.to_timedelta(np.random.rand(n) * ndays, unit=unit) + start
+
+
+def _waterfall_payload_generator():
+    dates_list = (
+        pd.Series(random_dates().sort_values())
+        .dt.to_period("M")
+        .drop_duplicates()
+        .astype(str)
+        .tolist()
+    )
+    old_list = [{"uv": float(np.random.uniform(2700, 4500, 1)), "pv": 0}]
+    for index in range(1, len(dates_list)):
+        old_list.append(
+            {
+                "uv": old_list[index - 1]["uv"] + old_list[index - 1]["pv"],
+                "pv": float(np.random.uniform(-500, 500, 1)),
+            }
+        )
+    old_list[len(dates_list) - 1]["pv"] = 0
+    df = pd.DataFrame(old_list)
+    df["date"] = dates_list
+    df = df.round(2)
+    df["date"] = df["date"].astype(str)
+    return df.to_dict("records")
