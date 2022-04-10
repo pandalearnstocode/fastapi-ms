@@ -2,6 +2,7 @@ from fastapi import FastAPI
 
 from payload_generator import (
     _bar_payload_generator,
+    _bubblechart_payload_generator,
     _donut_payload_generator,
     _hist_payload_generate,
     _line_payload_generator,
@@ -40,3 +41,8 @@ async def scatter():
 @app.get("/waterfall")
 async def waterfill():
     return _waterfall_payload_generator()
+
+
+@app.get("/bubblechart")
+async def bubblechart():
+    return _bubblechart_payload_generator()

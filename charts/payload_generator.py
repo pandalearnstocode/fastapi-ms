@@ -177,3 +177,9 @@ def _waterfall_payload_generator():
     df = df.round(2)
     df["date"] = df["date"].astype(str)
     return df.to_dict("records")
+
+
+def _bubblechart_payload_generator():
+    bubble_chart_data_path = "https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/4_ThreeNum.csv"
+    df = pd.read_csv(bubble_chart_data_path)
+    return df.to_dict("records")
