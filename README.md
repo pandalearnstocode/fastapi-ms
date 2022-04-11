@@ -6,6 +6,20 @@ Example of how to handle background processes with FastAPI, Celery, and Docker.
 
 Check out the [post](https://testdriven.io/blog/fastapi-and-celery/).
 
+## Get it up and running
+
+- **UI to trigger task:** http://localhost:8004/
+- **Swagger UI to trigger task:** http://localhost:8004/docs
+- **Task related CRUD:** http://localhost:8005/docs
+- **Chart generator:** http://localhost:8006/docs
+- **Flower to monitor task:** http://localhost:5556/
+- **Promethesus:** http://localhost:9090/
+- **Grafana:** http://localhost:3000/
+
+![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)
+
+Username and password for grafana is `admin` and `admin`.
+
 ## Want to use this project?
 
 Spin up the containers:
@@ -27,3 +41,7 @@ Check the status:
 ```sh
 $ curl http://localhost:8004/tasks/<TASK_ID>
 ```
+
+### Charting data
+
+![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)

@@ -601,3 +601,24 @@ AssertionError: daemonic processes are not allowed to have children
 [2022-04-10 07:50:49,524: INFO/MainProcess] mingle: all alone
 [2022-04-10 07:50:49,533: INFO/MainProcess] celery@cf153a763d43 ready.
 [2022-04-10 07:50:53,889: INFO/MainProcess] Events of group {task} enabled by remote.
+[2022-04-11 04:44:43,567: INFO/MainProcess] Connected to redis://redis:6379/0
+[2022-04-11 04:44:43,576: INFO/MainProcess] mingle: searching for neighbors
+[2022-04-11 04:44:44,606: INFO/MainProcess] mingle: all alone
+[2022-04-11 04:44:44,615: INFO/MainProcess] celery@b5fd16c58346 ready.
+[2022-04-11 04:44:48,817: INFO/MainProcess] Events of group {task} enabled by remote.
+[2022-04-11 04:48:30,363: INFO/MainProcess] Connected to redis://redis:6379/0
+[2022-04-11 04:48:30,370: INFO/MainProcess] mingle: searching for neighbors
+[2022-04-11 04:48:31,389: INFO/MainProcess] mingle: all alone
+[2022-04-11 04:48:31,403: INFO/MainProcess] celery@63f64c8e7bd9 ready.
+[2022-04-11 04:48:35,778: INFO/MainProcess] Events of group {task} enabled by remote.
+[2022-04-11 04:48:53,958: INFO/MainProcess] Received task: create_task[515263ea-48d8-4257-9a07-3b4bb7e08191]  
+[2022-04-11 04:49:03,977: INFO/ForkPoolWorker-7] Task create_task[515263ea-48d8-4257-9a07-3b4bb7e08191] succeeded in 10.017939325000043s: {'task_duration': 'Short task'}
+[2022-04-11 04:49:27,788: INFO/MainProcess] Received task: create_task[052a9444-e7a2-4c5a-ab4b-ac887a93d295]  
+[2022-04-11 04:49:37,804: INFO/ForkPoolWorker-7] Task create_task[052a9444-e7a2-4c5a-ab4b-ac887a93d295] succeeded in 10.012770146000548s: {'task_duration': 'Short task'}
+[2022-04-11 04:50:34,725: INFO/MainProcess] Connected to redis://redis:6379/0
+[2022-04-11 04:50:34,733: INFO/MainProcess] mingle: searching for neighbors
+[2022-04-11 04:50:35,753: INFO/MainProcess] mingle: all alone
+[2022-04-11 04:50:35,779: INFO/MainProcess] celery@5ba4d781bf4c ready.
+[2022-04-11 04:50:40,033: INFO/MainProcess] Events of group {task} enabled by remote.
+[2022-04-11 04:51:03,698: INFO/MainProcess] Received task: create_task[b8519606-33df-4f7f-be25-46749011d833]  
+[2022-04-11 04:51:13,713: INFO/ForkPoolWorker-7] Task create_task[b8519606-33df-4f7f-be25-46749011d833] succeeded in 10.013621312000396s: {'task_duration': 'Short task'}
