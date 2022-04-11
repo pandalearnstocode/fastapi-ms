@@ -16,7 +16,7 @@ Check out the [post](https://testdriven.io/blog/fastapi-and-celery/).
 - **Promethesus:** http://localhost:9090/
 - **Grafana:** http://localhost:3000/
 
-![Alt Text](./generate_data.giff)
+![Alt Text](https://github.com/pandalearnstocode/fastapi-ms/blob/develop/generate_data.gif)
 
 Username and password for grafana is `admin` and `admin`.
 
@@ -44,4 +44,4 @@ $ curl http://localhost:8004/tasks/<TASK_ID>
 
 ### Charting data
 
-![Alt Text](./endpoints.gif)
+![Alt Text](https://github.com/pandalearnstocode/fastapi-ms/blob/develop/endpoints.gif)
