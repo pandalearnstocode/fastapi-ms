@@ -622,3 +622,38 @@ AssertionError: daemonic processes are not allowed to have children
 [2022-04-11 04:50:40,033: INFO/MainProcess] Events of group {task} enabled by remote.
 [2022-04-11 04:51:03,698: INFO/MainProcess] Received task: create_task[b8519606-33df-4f7f-be25-46749011d833]  
 [2022-04-11 04:51:13,713: INFO/ForkPoolWorker-7] Task create_task[b8519606-33df-4f7f-be25-46749011d833] succeeded in 10.013621312000396s: {'task_duration': 'Short task'}
+[2022-04-11 11:07:11,664: INFO/MainProcess] Connected to redis://redis:6379/0
+[2022-04-11 11:07:11,677: INFO/MainProcess] mingle: searching for neighbors
+[2022-04-11 11:07:12,709: INFO/MainProcess] mingle: all alone
+[2022-04-11 11:07:12,742: INFO/MainProcess] celery@e61a8fe86c6b ready.
+[2022-04-11 11:07:16,883: INFO/MainProcess] Events of group {task} enabled by remote.
+[2022-04-12 04:30:26,210: INFO/MainProcess] Connected to redis://redis:6379/0
+[2022-04-12 04:30:26,217: INFO/MainProcess] mingle: searching for neighbors
+[2022-04-12 04:30:27,238: INFO/MainProcess] mingle: all alone
+[2022-04-12 04:30:27,269: INFO/MainProcess] celery@4a969187b81e ready.
+[2022-04-12 04:30:31,428: INFO/MainProcess] Events of group {task} enabled by remote.
+[2022-04-12 04:51:46,658: INFO/MainProcess] Connected to redis://redis:6379/0
+[2022-04-12 04:51:46,665: INFO/MainProcess] mingle: searching for neighbors
+[2022-04-12 04:51:47,681: INFO/MainProcess] mingle: all alone
+[2022-04-12 04:51:47,692: INFO/MainProcess] celery@af8de48c5295 ready.
+[2022-04-12 04:51:52,050: INFO/MainProcess] Events of group {task} enabled by remote.
+[2022-04-12 04:53:33,743: INFO/MainProcess] Connected to redis://redis:6379/0
+[2022-04-12 04:53:33,750: INFO/MainProcess] mingle: searching for neighbors
+[2022-04-12 04:53:34,769: INFO/MainProcess] mingle: all alone
+[2022-04-12 04:53:34,800: INFO/MainProcess] celery@0128a34eb5b0 ready.
+[2022-04-12 04:53:39,199: INFO/MainProcess] Events of group {task} enabled by remote.
+[2022-04-12 04:54:25,438: INFO/MainProcess] Connected to redis://redis:6379/0
+[2022-04-12 04:54:25,445: INFO/MainProcess] mingle: searching for neighbors
+[2022-04-12 04:54:26,463: INFO/MainProcess] mingle: all alone
+[2022-04-12 04:54:26,481: INFO/MainProcess] celery@47b1f3906c05 ready.
+[2022-04-12 04:54:30,813: INFO/MainProcess] Events of group {task} enabled by remote.
+[2022-04-12 04:56:02,501: INFO/MainProcess] Connected to redis://redis:6379/0
+[2022-04-12 04:56:02,508: INFO/MainProcess] mingle: searching for neighbors
+[2022-04-12 04:56:03,524: INFO/MainProcess] mingle: all alone
+[2022-04-12 04:56:03,533: INFO/MainProcess] celery@0453cf0d16a2 ready.
+[2022-04-12 04:56:07,936: INFO/MainProcess] Events of group {task} enabled by remote.
+[2022-04-12 04:57:06,716: INFO/MainProcess] Connected to redis://redis:6379/0
+[2022-04-12 04:57:06,723: INFO/MainProcess] mingle: searching for neighbors
+[2022-04-12 04:57:07,739: INFO/MainProcess] mingle: all alone
+[2022-04-12 04:57:07,750: INFO/MainProcess] celery@b5c1b002450d ready.
+[2022-04-12 04:57:12,150: INFO/MainProcess] Events of group {task} enabled by remote.

@@ -9,4 +9,5 @@ requests==2.25.1
 uvicorn==0.13.4
 loguru==0.5.1
 requests
-cpu-load-generator
+pandas
+scikit-learn
