@@ -1,4 +1,4 @@
-# Life cycle of DE, ML pipeline and model serving
+# Life cycle of DE, ML pipeline & model serving
 
 ## `job_template.ipynb`
 
