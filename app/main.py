@@ -35,7 +35,7 @@ You will be able to:
 
 You will be able to:
 
-* **tasks** (POST: This is to submit a long running celery task.).
+* **/tasks** (POST: This is to submit a long running celery task.).
 * **/tasks/{task_id}** (GET: For a submitted task_id this endpoint is to check the status and result of the task.).
 """
 
