@@ -6,7 +6,7 @@ from pydantic import BaseModel
 from sqlalchemy import JSON, Column, Integer, String, create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import Session, sessionmaker
-
+from loguru import logger
 app = FastAPI()
 engine = create_engine("sqlite:///./app.db", connect_args={"check_same_thread": False})
 
@@ -68,6 +68,12 @@ app.include_router(router)
 
 @app.get("/ping")
 async def root():
+    try:
+        with engine.connect() as con:
+            con.execute("SELECT 1")
+        logger.info('engine is valid')
+    except Exception as e:
+        logger.info(f'Engine invalid: {str(e)}')
     return {"message": "pong"}
 
 
