@@ -15,7 +15,7 @@ from worker import create_task
 description = """
 ML Engine API to trigger ML endpoints (lightweight process) and ML jobs/tasks (batch processing). 🚀
 
-## Items
+## Endpoint description in ML Engine API
 
 In this REST API service we have the following items,
 
@@ -84,7 +84,12 @@ class Iris(BaseModel):
 	sepal_width: float
 	petal_length: float
 	petal_width: float
-	
+
+	class Config:
+		schema_extra = {"example":{"sepal_length":5.1,"sepal_width":3.5,"petal_length":1.4,"petal_width":0.2}}
+
+class PredictResponse(BaseModel):
+	predicted_target: float
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
@@ -94,11 +99,11 @@ templates = Jinja2Templates(directory="templates")
 def home(request: Request):
     return templates.TemplateResponse("home.html", context={"request": request})
 
-@app.post("/prediction/", tags=["prediction"])
+@app.post("/prediction/", tags=["prediction"], response_model=PredictResponse)
 async def predict(iris: Iris):
 	input_df = pd.DataFrame([iris.dict()])
 	pred = lr_model.predict(input_df)[0]
-	return pred
+	return {"predicted_target":pred}
 
 @app.post("/tasks", status_code=201, tags=["jobs"])
 def run_task(payload=Body(...)):
