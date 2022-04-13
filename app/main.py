@@ -65,7 +65,8 @@ tags_metadata = [
 pkl_filename = "./iris_model.pkl"
 with open(pkl_filename, 'rb') as file:
 	lr_model = pickle.load(file)
-
+with open('./model_train_payload.json', 'r') as fp:
+    model_payload = json.load(fp)
 app = FastAPI(
     title="Analytical App ML Engine",
     description=description,
@@ -111,7 +112,7 @@ def run_task(payload=Body(...)):
     logger.info(f"Task type: {str(task_type)} received.")
     url = "http://crud:8000/task"
     logger.info(f"Task type: {str(task_type)} received.")
-    task = create_task.delay(int(task_type))
+    task = create_task.delay(int(task_type), model_payload)
     logger.info(f"Task type: {task_type} submitted. Generated task id: {task.id}")
     payload = {
         "task_id": str(task.id),
@@ -147,10 +148,11 @@ def get_status(task_id):
         "task_type": str(task_type),
     }
     if task_result.status == "SUCCESS":
+        logger.info(f"{type(task_result.result)}")
         result["task_result"] = {"result": task_result.result}
 
     r = requests.put(url, json=result)
-    result["task_result"] = json.dumps({"result": task_result.result})
+    result["task_result"] = {"result": task_result.result}
     if r.status_code == 200:
         logger.info(f"Task for {str(task_id)} registered in DB successfully.")
     else:

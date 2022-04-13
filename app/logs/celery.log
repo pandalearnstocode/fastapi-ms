@@ -687,3 +687,147 @@ AssertionError: daemonic processes are not allowed to have children
 [2022-04-12 07:53:49,820: INFO/MainProcess] mingle: all alone
 [2022-04-12 07:53:49,833: INFO/MainProcess] celery@9b8b91dced92 ready.
 [2022-04-12 07:53:54,173: INFO/MainProcess] Events of group {task} enabled by remote.
+[2022-04-12 14:16:49,476: INFO/MainProcess] Connected to redis://redis:6379/0
+[2022-04-12 14:16:49,483: INFO/MainProcess] mingle: searching for neighbors
+[2022-04-12 14:16:50,503: INFO/MainProcess] mingle: all alone
+[2022-04-12 14:16:50,513: INFO/MainProcess] celery@e9b15c4c9b5a ready.
+[2022-04-12 14:16:54,941: INFO/MainProcess] Events of group {task} enabled by remote.
+[2022-04-12 14:17:21,922: INFO/MainProcess] Received task: create_task[e1793ae3-4427-45b8-b0ac-6e7f337e54da]  
+[2022-04-12 14:17:31,938: INFO/ForkPoolWorker-7] Task create_task[e1793ae3-4427-45b8-b0ac-6e7f337e54da] succeeded in 10.014323804003652s: {'task_duration': 'Short task'}
+[2022-04-12 14:24:42,768: INFO/MainProcess] Connected to redis://redis:6379/0
+[2022-04-12 14:24:42,775: INFO/MainProcess] mingle: searching for neighbors
+[2022-04-12 14:24:43,792: INFO/MainProcess] mingle: all alone
+[2022-04-12 14:24:43,823: INFO/MainProcess] celery@c97e01556610 ready.
+[2022-04-12 14:24:47,910: INFO/MainProcess] Events of group {task} enabled by remote.
+[2022-04-12 14:24:59,835: INFO/MainProcess] Received task: create_task[8dfefe59-30fb-42c8-9096-1c2605ef736b]  
+[2022-04-12 14:24:59,847: ERROR/ForkPoolWorker-7] Task create_task[8dfefe59-30fb-42c8-9096-1c2605ef736b] raised unexpected: ValueError('y should be a 1d array, got an array of shape (150, 4) instead.')
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/celery/app/trace.py", line 412, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/celery/app/trace.py", line 704, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/usr/src/app/worker.py", line 70, in create_task
+    out = _short_task(payload)
+  File "/usr/src/app/worker.py", line 29, in _short_task
+    lr_model.fit(X, y)
+  File "/usr/local/lib/python3.9/site-packages/sklearn/linear_model/_logistic.py", line 1508, in fit
+    X, y = self._validate_data(
+  File "/usr/local/lib/python3.9/site-packages/sklearn/base.py", line 581, in _validate_data
+    X, y = check_X_y(X, y, **check_params)
+  File "/usr/local/lib/python3.9/site-packages/sklearn/utils/validation.py", line 979, in check_X_y
+    y = _check_y(y, multi_output=multi_output, y_numeric=y_numeric)
+  File "/usr/local/lib/python3.9/site-packages/sklearn/utils/validation.py", line 993, in _check_y
+    y = column_or_1d(y, warn=True)
+  File "/usr/local/lib/python3.9/site-packages/sklearn/utils/validation.py", line 1038, in column_or_1d
+    raise ValueError(
+ValueError: y should be a 1d array, got an array of shape (150, 4) instead.
+[2022-04-12 14:28:13,876: INFO/MainProcess] Received task: create_task[8dc8e736-141f-468d-9c91-ca4b5a71d814]  
+[2022-04-12 14:28:13,882: ERROR/ForkPoolWorker-7] Task create_task[8dc8e736-141f-468d-9c91-ca4b5a71d814] raised unexpected: ValueError('y should be a 1d array, got an array of shape (150, 4) instead.')
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/celery/app/trace.py", line 412, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/celery/app/trace.py", line 704, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/usr/src/app/worker.py", line 70, in create_task
+    out = _short_task(payload)
+  File "/usr/src/app/worker.py", line 29, in _short_task
+    lr_model.fit(X, y)
+  File "/usr/local/lib/python3.9/site-packages/sklearn/linear_model/_logistic.py", line 1508, in fit
+    X, y = self._validate_data(
+  File "/usr/local/lib/python3.9/site-packages/sklearn/base.py", line 581, in _validate_data
+    X, y = check_X_y(X, y, **check_params)
+  File "/usr/local/lib/python3.9/site-packages/sklearn/utils/validation.py", line 979, in check_X_y
+    y = _check_y(y, multi_output=multi_output, y_numeric=y_numeric)
+  File "/usr/local/lib/python3.9/site-packages/sklearn/utils/validation.py", line 993, in _check_y
+    y = column_or_1d(y, warn=True)
+  File "/usr/local/lib/python3.9/site-packages/sklearn/utils/validation.py", line 1038, in column_or_1d
+    raise ValueError(
+ValueError: y should be a 1d array, got an array of shape (150, 4) instead.
+[2022-04-12 14:30:25,458: INFO/MainProcess] Connected to redis://redis:6379/0
+[2022-04-12 14:30:25,464: INFO/MainProcess] mingle: searching for neighbors
+[2022-04-12 14:30:26,482: INFO/MainProcess] mingle: all alone
+[2022-04-12 14:30:26,514: INFO/MainProcess] celery@b8abff93e391 ready.
+[2022-04-12 14:30:26,521: INFO/MainProcess] Received task: create_task[ac932821-833b-46d2-9aa4-bae3297240ea]  
+[2022-04-12 14:30:26,549: ERROR/ForkPoolWorker-7] Task create_task[ac932821-833b-46d2-9aa4-bae3297240ea] raised unexpected: ValueError('y should be a 1d array, got an array of shape (150, 4) instead.')
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/celery/app/trace.py", line 412, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/celery/app/trace.py", line 704, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/usr/src/app/worker.py", line 70, in create_task
+    out = _short_task(payload)
+  File "/usr/src/app/worker.py", line 29, in _short_task
+    lr_model.fit(X, y)
+  File "/usr/local/lib/python3.9/site-packages/sklearn/linear_model/_logistic.py", line 1508, in fit
+    X, y = self._validate_data(
+  File "/usr/local/lib/python3.9/site-packages/sklearn/base.py", line 581, in _validate_data
+    X, y = check_X_y(X, y, **check_params)
+  File "/usr/local/lib/python3.9/site-packages/sklearn/utils/validation.py", line 979, in check_X_y
+    y = _check_y(y, multi_output=multi_output, y_numeric=y_numeric)
+  File "/usr/local/lib/python3.9/site-packages/sklearn/utils/validation.py", line 993, in _check_y
+    y = column_or_1d(y, warn=True)
+  File "/usr/local/lib/python3.9/site-packages/sklearn/utils/validation.py", line 1038, in column_or_1d
+    raise ValueError(
+ValueError: y should be a 1d array, got an array of shape (150, 4) instead.
+[2022-04-12 14:30:30,509: INFO/MainProcess] Events of group {task} enabled by remote.
+[2022-04-12 14:47:12,304: INFO/MainProcess] Connected to redis://redis:6379/0
+[2022-04-12 14:47:12,312: INFO/MainProcess] mingle: searching for neighbors
+[2022-04-12 14:47:13,329: INFO/MainProcess] mingle: all alone
+[2022-04-12 14:47:13,355: INFO/MainProcess] celery@0d2f40c14e00 ready.
+[2022-04-12 14:47:17,419: INFO/MainProcess] Events of group {task} enabled by remote.
+[2022-04-12 14:47:30,959: INFO/MainProcess] Received task: create_task[bb36a11a-95a3-4b63-a117-c9d91596cd9b]  
+[2022-04-12 14:47:30,971: ERROR/ForkPoolWorker-7] Task create_task[bb36a11a-95a3-4b63-a117-c9d91596cd9b] raised unexpected: ValueError('y should be a 1d array, got an array of shape (150, 4) instead.')
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/celery/app/trace.py", line 412, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/celery/app/trace.py", line 704, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/usr/src/app/worker.py", line 73, in create_task
+    out = _short_task(payload)
+  File "/usr/src/app/worker.py", line 29, in _short_task
+    lr_model.fit(X, y)
+  File "/usr/local/lib/python3.9/site-packages/sklearn/linear_model/_logistic.py", line 1508, in fit
+    X, y = self._validate_data(
+  File "/usr/local/lib/python3.9/site-packages/sklearn/base.py", line 581, in _validate_data
+    X, y = check_X_y(X, y, **check_params)
+  File "/usr/local/lib/python3.9/site-packages/sklearn/utils/validation.py", line 979, in check_X_y
+    y = _check_y(y, multi_output=multi_output, y_numeric=y_numeric)
+  File "/usr/local/lib/python3.9/site-packages/sklearn/utils/validation.py", line 993, in _check_y
+    y = column_or_1d(y, warn=True)
+  File "/usr/local/lib/python3.9/site-packages/sklearn/utils/validation.py", line 1038, in column_or_1d
+    raise ValueError(
+ValueError: y should be a 1d array, got an array of shape (150, 4) instead.
+[2022-04-12 14:49:55,179: INFO/MainProcess] Connected to redis://redis:6379/0
+[2022-04-12 14:49:55,192: INFO/MainProcess] mingle: searching for neighbors
+[2022-04-12 14:49:56,216: INFO/MainProcess] mingle: all alone
+[2022-04-12 14:49:56,223: INFO/MainProcess] celery@4b87d86e8c54 ready.
+[2022-04-12 14:50:00,235: INFO/MainProcess] Events of group {task} enabled by remote.
+[2022-04-12 14:51:47,073: INFO/MainProcess] Received task: create_task[846671c4-d73a-44e8-9d9c-8640cb8c81fd]  
+[2022-04-12 14:51:47,081: WARNING/ForkPoolWorker-7] /usr/local/lib/python3.9/site-packages/sklearn/utils/validation.py:993: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples, ), for example using ravel().
+  y = column_or_1d(y, warn=True)
+[2022-04-12 14:51:47,110: WARNING/ForkPoolWorker-7] /usr/local/lib/python3.9/site-packages/sklearn/linear_model/_logistic.py:814: ConvergenceWarning: lbfgs failed to converge (status=1):
+STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+
+Increase the number of iterations (max_iter) or scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+[2022-04-12 14:51:57,128: INFO/ForkPoolWorker-7] Task create_task[846671c4-d73a-44e8-9d9c-8640cb8c81fd] succeeded in 10.05249922999792s: {'task_duration': 'Short task', 'model_result': {'init_params': {'C': 1.0, 'class_weight': None, 'dual': False, 'fit_intercept': True, 'intercept_scaling': 1, 'l1_ratio': None, 'max_iter': 100, 'multi_class': 'auto', 'n_jobs': None, 'penalty': 'l2', 'random_state': None, 'solver': 'lbfgs', 'tol': 0.0001, 'verbose': 0, 'warm_start': False}, 'model_params': {'coef_': [...], 'intercept_': [...], 'classes_': [...], 'n_iter_': [...]}}}
+[2022-04-12 14:55:42,115: INFO/MainProcess] Connected to redis://redis:6379/0
+[2022-04-12 14:55:42,121: INFO/MainProcess] mingle: searching for neighbors
+[2022-04-12 14:55:43,137: INFO/MainProcess] mingle: all alone
+[2022-04-12 14:55:43,166: INFO/MainProcess] celery@12248437c169 ready.
+[2022-04-12 14:55:47,339: INFO/MainProcess] Events of group {task} enabled by remote.
+[2022-04-12 14:57:29,690: INFO/MainProcess] Received task: create_task[fc98e13f-93c4-48d4-b234-9588dd60118b]  
+[2022-04-12 14:57:29,701: WARNING/ForkPoolWorker-7] /usr/local/lib/python3.9/site-packages/sklearn/utils/validation.py:993: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples, ), for example using ravel().
+  y = column_or_1d(y, warn=True)
+[2022-04-12 14:57:29,730: WARNING/ForkPoolWorker-7] /usr/local/lib/python3.9/site-packages/sklearn/linear_model/_logistic.py:814: ConvergenceWarning: lbfgs failed to converge (status=1):
+STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+
+Increase the number of iterations (max_iter) or scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+[2022-04-12 14:57:39,748: INFO/ForkPoolWorker-7] Task create_task[fc98e13f-93c4-48d4-b234-9588dd60118b] succeeded in 10.055718083996908s: {'task_duration': 'Short task', 'model_result': {'init_params': {'C': 1.0, 'class_weight': None, 'dual': False, 'fit_intercept': True, 'intercept_scaling': 1, 'l1_ratio': None, 'max_iter': 100, 'multi_class': 'auto', 'n_jobs': None, 'penalty': 'l2', 'random_state': None, 'solver': 'lbfgs', 'tol': 0.0001, 'verbose': 0, 'warm_start': False}, 'model_params': {'coef_': [...], 'intercept_': [...], 'classes_': [...], 'n_iter_': [...]}}}

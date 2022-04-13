@@ -1,7 +1,5 @@
 version: '3.8'
-
 services:
-
   web:
     build: ./app
     ports:
@@ -14,7 +12,6 @@ services:
       - CELERY_RESULT_BACKEND=redis://redis:6379/0
     depends_on:
       - redis
-
   worker:
     build: ./app
     command: celery worker --app=worker.celery --loglevel=info --logfile=logs/celery.log
@@ -26,10 +23,8 @@ services:
     depends_on:
       - web
       - redis
-
   redis:
     image: redis:6-alpine
-
   flower:
     build: ./app
     command:  flower --app=worker.celery --port=5555 --broker=redis://redis:6379/0
