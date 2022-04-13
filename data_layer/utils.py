@@ -1,6 +1,37 @@
 import pandas as pd
 
 
+def retro_dictify(frame):
+    d = {}
+    for row in frame.values:
+        here = d
+        for elem in row[:-2]:
+            if elem not in here:
+                here[elem] = {}
+            here = here[elem]
+        here[row[-2]] = row[-1]
+    return d
+
+def recur_dictify(frame):
+    if len(frame.columns) == 1:
+        if frame.values.size == 1: return frame.values[0][0]
+        return list(frame.values.squeeze())
+    grouped = frame.groupby(frame.columns[0])
+    d = {k: recur_dictify(g.iloc[:,1:]) for k,g in grouped}
+    return d
+
+def hierarchy_flat(df, hierarchy_cols = None):
+    if hierarchy_cols is None:
+        hierarchy_cols = df.select_dtypes('object').nunique().index.tolist()
+    df = df[hierarchy_cols]
+    df = df.sort_values(hierarchy_cols).drop_duplicates()
+    df = df.reset_index(drop = True)
+    return df
+
+def hierarchy_nested(df, hierarchy_cols = None):
+    df_flat = hierarchy_flat(df, hierarchy_cols)
+    return recur_dictify(df_flat)
+
 def generate_schema(df):
     str_col_mapper = {}
     num_col_mapper = {}
